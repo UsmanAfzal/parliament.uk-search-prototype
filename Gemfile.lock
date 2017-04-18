@@ -1,7 +1,7 @@
 PATH
   remote: ../parliament.uk-pugin-components-rails
   specs:
-    pugin (0.5.2)
+    pugin (0.5.5)
       haml (~> 4.0)
 
 GEM

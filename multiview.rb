@@ -98,10 +98,10 @@ module Sinatra::MultiView
       	puts '---------'
 				puts 'SEARCHING FOR TEMPLATE: '+template
         paths.each do |path|
-          puts 'SEARCHING FOR PATH: '+path
+          puts '-- SEARCHING WITHIN PATH: '+path
 
           formats.each do |format|
-          	puts 'SEARCHING FOR FORMAT: '+format.to_s
+          	puts '---- SEARCHING FOR FORMAT: '+format.to_s
             tpl = template_for(template, format, path) or next
             return [tpl, format]
           end

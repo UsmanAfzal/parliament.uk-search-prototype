@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'sinatra/contrib'
+require 'sinatra/content_for'
 
 require './multiview'
 
@@ -74,9 +74,9 @@ class Search < Sinatra::Application
       @results = request.get({ query: @query_parameter, start_page: @start_page })
       @results_total = @results.totalResults
 
-      haml :'search/results', layout: :'layouts/layout'
+      show 'search/results'
     rescue Parliament::ServerError
-      haml :'search/no_results', layout: :'layouts/layout'
+      show 'search/no_results'
     end
   end
 
